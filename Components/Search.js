@@ -23,15 +23,16 @@ class Search extends React.Component {
     }
 
     _loadFilms = () => {
-        if (this.state.textSearch.length > 0) {
+        // if (this.state.textSearch.length > 0) {
             this.setState({ isLoading: true })
-            getFilmsFromApiWithSearchedText(this.state.textSearch, this.page + 1).then(data => {
+            // this.state.textSearch,
+            getFilmsFromApiWithSearchedText( this.page + 1).then(data => {
                 this.page = data.page
                 this.totalePages = data.total_pages
                 this.setState({ films: [...this.state.films, ...data.results], isLoading: false })
             });
             //this.setState({ textSearch: " " })
-        }
+        // }
 
     }
 
